@@ -1,0 +1,56 @@
+git<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Voice Command Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐾 Pet Voice Command</h1>
+            <p>Assign customized voice commands to buttons below.</p>
+        </header>
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+            <div class="input-group">
+                <label for="audio-file">1. Select Audio File (MP3/WAV)</label>
+                <input type="file" id="audio-file" accept="audio/*">
+            </div>
+
+            <div class="input-group">
+                <label for="target-select">2. Select Target Button</label>
+                <select id="target-select">
+                    <option value="1">Command 1</option>
+                    <option value="2">Command 2</option>
+                    <option value="3">Command 3</option>
+                    <option value="4">Command 4</option>
+                    <option value="5">Command 5</option>
+                </select>
+            </div>
+
+            <button id="assign-btn" class="action-btn">Assign Audio</button>
+        </section>
+
+        <!-- Main Interface -->
+        <div class="main-interface">
+            <section class="command-grid">
+                <button class="command-btn" data-id="1">Command 1</button>
+                <button class="command-btn" data-id="2">Command 2</button>
+                <button class="command-btn" data-id="3">Command 3</button>
+                <button class="command-btn" data-id="4">Command 4</button>
+                <button class="command-btn" data-id="5">Command 5</button>
+            </section>
+
+            <div class="volume-container">
+                <span class="vol-label">VOL</span>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
