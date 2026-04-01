@@ -126,10 +126,12 @@ input[type="file"], select {
     border-radius: 12px;
     padding: 2rem 1rem;
     font-size: 1.1rem;
-    cursor: not-allowed;
+    cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    user-select: none;
+    touch-action: manipulation;
 }
 
 /* Active State (When Audio is Assigned) */
@@ -138,11 +140,19 @@ input[type="file"], select {
     color: white;
     border-color: var(--glow-color);
     box-shadow: 0 0 15px rgba(67, 181, 129, 0.3);
-    cursor: pointer;
+}
+
+.command-btn:active {
+    transform: scale(0.95);
 }
 
 .command-btn.active:active {
-    transform: scale(0.95);
     background-color: var(--glow-color);
     box-shadow: 0 0 25px rgba(67, 181, 129, 0.6);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
 }
